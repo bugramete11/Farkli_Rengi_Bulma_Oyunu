@@ -36,7 +36,7 @@ Yanlış kutucuğa tıkladığınızda 1 can kaybedersiniz. 3 canınız bittiği
 📝 Kurulum
 Bu projeyi bilgisayarınızda çalıştırmak için:
 
-Depoyu klonlayın: git clone [https://github.com/kullanici-adiniz/renk-avcisi-26.git](https://github.com/kullanici-adiniz/renk-avcisi-26.git)
+Depoyu klonlayın: git clone https://github.com/bugramete11/Farkli_Rengi_Bulma_Oyunu/tree/main/RenkOyunu
 
 Klasörün içine girin.
 
