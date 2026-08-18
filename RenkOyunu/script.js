@@ -17,8 +17,7 @@ const wrongSound = new Audio("yanlis.mp3");
 
 highScoreDisplay.textContent = highScore;
 
-// --- TEMA YÖNETİM SİSTEMİ ---
-// Kaydedilmiş temayı al, yoksa "black" yap
+
 let savedTheme = localStorage.getItem("oyunTemasi") || "black";
 document.body.setAttribute("data-theme", savedTheme);
 
@@ -32,7 +31,7 @@ themeDots.forEach(dot => {
     });
 });
 
-// Oyunu Başlat
+
 init();
 
 function init() {
@@ -57,11 +56,9 @@ function init() {
     generateBoard();
 }
 
-// --- DİNAMİK KUTU ÜRETİMİ ---
 function generateBoard() {
     container.innerHTML = "";
 
-    // Skora Göre Boyut Katlanması
     let gridSize = 2; // 2x2
     if (score >= 5) gridSize = 3;  // 3x3
     if (score >= 10) gridSize = 4; // 4x4
@@ -71,7 +68,6 @@ function generateBoard() {
 
     let totalSquares = gridSize * gridSize;
 
-    // Rastgele Renk Üretimi
     let r = Math.floor(Math.random() * (255 - difficulty));
     let g = Math.floor(Math.random() * (255 - difficulty));
     let b = Math.floor(Math.random() * (255 - difficulty));
@@ -98,7 +94,6 @@ function generateBoard() {
     }
 }
 
-// --- TIKLAMA MANTIĞI ---
 function handleSquareClick() {
     if (lives <= 0) return;
 
@@ -139,7 +134,6 @@ function handleSquareClick() {
 
 function updateUI() {
     scoreDisplay.textContent = score;
-    // Kalpleri emojiden ibaret basit ve modern tutuyoruz
     livesDisplay.textContent = "❤️".repeat(lives) + "🤍".repeat(3 - lives);
 }
 
