@@ -21,5 +21,12 @@ Bu proje, web teknolojileri (HTML, CSS, JS) kullanılarak geliştirilmiş modern
 Projeyi yerel bilgisayarınızda çalıştırmak için şu adımları izleyebilirsiniz:
 
 1. Depoyu klonlayın veya dosyaları bilgisayarınıza indirin:
-   ```bash
-   git clone https://github.com/bugramete11/Farkli_Rengi_Bulma_Oyunu/tree/main/RenkOyunu
+git clone https://github.com/bugramete11/Farkli_Rengi_Bulma_Oyunu/tree/main/RenkOyunu
+sonrasında index.html dosyasını herhangi bir tarayıcıda açın.
+Bu proje, web tasarımı ve JavaScript kullanarak interaktif bir oyun geliştirme amacıyla hazırlanmıştır.
+
+👨‍💻 Geliştirici
+
+Buğra Mete Tura
+
+Web Tasarımı ve Kodlama Öğrencisi
