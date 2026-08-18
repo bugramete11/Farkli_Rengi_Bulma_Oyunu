@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renk Avcısı '26</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<!-- Varsayılan tema siyah olarak başlar -->
+
+<body data-theme="black">
+
+    <!-- 2026 Modern Yüzen Kontrol Kapsülü -->
+    <div class="hud-capsule">
+
+        <div class="hud-top">
+            <h1>RENK AVCISI <span>'26</span></h1>
+            <!-- Tema Seçici Noktalar -->
+            <div class="theme-picker">
+                <div class="theme-dot" data-color="black" title="Siyah (Karanlık Mod)"></div>
+                <div class="theme-dot" data-color="white" title="Beyaz (Aydınlık Mod)"></div>
+                <div class="theme-dot" data-color="red" title="Kırmızı"></div>
+                <div class="theme-dot" data-color="green" title="Yeşil"></div>
+                <div class="theme-dot" data-color="blue" title="Mavi"></div>
+                <div class="theme-dot" data-color="yellow" title="Sarı"></div>
+                <div class="theme-dot" data-color="purple" title="Mor"></div>
+                <div class="theme-dot" data-color="orange" title="Turuncu"></div>
+            </div>
+        </div>
+
+        <div class="hud-middle">
+            <button id="resetBtn">🔄 YENİDEN</button>
+            <span id="message">Gözlerine Güveniyor musun?</span>
+            <button id="hintBtn">💡 İPUCU (-2)</button>
+        </div>
+
+        <div class="hud-bottom">
+            <div class="stat-badge">Can: <span id="lives">❤️❤️❤️</span></div>
+            <div class="stat-badge">Skor: <span id="score">0</span></div>
+            <div class="stat-badge">Rekor: <span id="highScore">0</span></div>
+        </div>
+    </div>
+
+    <!-- Dinamik Oyun Alanı -->
+    <div id="container"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

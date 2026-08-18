@@ -1,0 +1,349 @@
+/* --- YENİ NESİL TEMA & GLASSMORPHISM --- */
+:root {
+    --bg-color: #09090b;
+    --blob-1: #0ea5e9;
+    /* Arka plandaki 1. parlayan küre */
+    --blob-2: #6366f1;
+    /* Arka plandaki 2. parlayan küre */
+    --capsule-bg: rgba(20, 20, 25, 0.4);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --text-color: #f8fafc;
+    --accent: #22d3ee;
+}
+
+[data-theme="white"] {
+    --bg-color: #e2e8f0;
+    --blob-1: #3b82f6;
+    --blob-2: #a855f7;
+    --capsule-bg: rgba(255, 255, 255, 0.4);
+    --glass-border: rgba(255, 255, 255, 0.4);
+    --text-color: #0f172a;
+    --accent: #4361ee;
+}
+
+[data-theme="red"] {
+    --bg-color: #1a0504;
+    --blob-1: #ef4444;
+    --blob-2: #b91c1c;
+    --capsule-bg: rgba(20, 5, 5, 0.4);
+    --glass-border: rgba(255, 50, 50, 0.2);
+    --text-color: #fecaca;
+    --accent: #ff3366;
+}
+
+[data-theme="green"] {
+    --bg-color: #021a0f;
+    --blob-1: #10b981;
+    --blob-2: #047857;
+    --capsule-bg: rgba(2, 20, 10, 0.4);
+    --glass-border: rgba(50, 255, 100, 0.2);
+    --text-color: #a7f3d0;
+    --accent: #10b981;
+}
+
+[data-theme="blue"] {
+    --bg-color: #030f26;
+    --blob-1: #3b82f6;
+    --blob-2: #1d4ed8;
+    --capsule-bg: rgba(5, 15, 30, 0.4);
+    --glass-border: rgba(50, 150, 255, 0.2);
+    --text-color: #bfdbfe;
+    --accent: #3b82f6;
+}
+
+[data-theme="yellow"] {
+    --bg-color: #1f1602;
+    --blob-1: #eab308;
+    --blob-2: #a16207;
+    --capsule-bg: rgba(20, 15, 5, 0.4);
+    --glass-border: rgba(255, 200, 50, 0.2);
+    --text-color: #fef08a;
+    --accent: #eab308;
+}
+
+[data-theme="purple"] {
+    --bg-color: #120322;
+    --blob-1: #d946ef;
+    --blob-2: #7e22ce;
+    --capsule-bg: rgba(15, 5, 25, 0.4);
+    --glass-border: rgba(200, 50, 255, 0.2);
+    --text-color: #e9d5ff;
+    --accent: #d946ef;
+}
+
+[data-theme="orange"] {
+    --bg-color: #1c0a00;
+    --blob-1: #f97316;
+    --blob-2: #c2410c;
+    --capsule-bg: rgba(20, 10, 5, 0.4);
+    --glass-border: rgba(255, 120, 50, 0.2);
+    --text-color: #fed7aa;
+    --accent: #f97316;
+}
+
+/* --- GENEL TASARIM --- */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* ARKA PLAN KÜRELERİ - Camın arkasında harika bir derinlik yaratır */
+body::before,
+body::after {
+    content: '';
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    z-index: -1;
+    filter: blur(90px);
+    /* Işığı dağıtarak parlatır */
+    opacity: 0.7;
+    transition: background 0.5s ease;
+}
+
+body::before {
+    top: 5%;
+    left: 10%;
+    background: var(--blob-1);
+}
+
+body::after {
+    bottom: 20%;
+    right: 10%;
+    background: var(--blob-2);
+}
+
+/* 2026 Yüzen Kapsül Arayüzü (TAM GLASSMORPHISM) */
+.hud-capsule {
+    background: var(--capsule-bg);
+    backdrop-filter: blur(25px);
+    /* Cam bulanıklığı */
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid var(--glass-border);
+    /* Cam çerçevesi yansıması */
+    border-radius: 24px;
+    width: 90%;
+    max-width: 600px;
+    margin-top: 30px;
+    padding: 20px 30px;
+    /* Camın iç ve dış gölgelendirmesi */
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3), inset 0 0 15px rgba(255, 255, 255, 0.05);
+    transition: all 0.5s ease;
+}
+
+.hud-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--glass-border);
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 1.5em;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+h1 span {
+    color: var(--accent);
+}
+
+/* Tema Renk Noktaları */
+.theme-picker {
+    display: flex;
+    gap: 8px;
+}
+
+.theme-dot {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.theme-dot:hover {
+    transform: scale(1.3);
+}
+
+.theme-dot[data-color="black"] {
+    background: #09090b;
+    border-color: #22d3ee;
+}
+
+.theme-dot[data-color="white"] {
+    background: #f8f9fa;
+    border-color: #4361ee;
+}
+
+.theme-dot[data-color="red"] {
+    background: #ff3366;
+    box-shadow: 0 0 8px #ff3366;
+}
+
+.theme-dot[data-color="green"] {
+    background: #10b981;
+    box-shadow: 0 0 8px #10b981;
+}
+
+.theme-dot[data-color="blue"] {
+    background: #3b82f6;
+    box-shadow: 0 0 8px #3b82f6;
+}
+
+.theme-dot[data-color="yellow"] {
+    background: #eab308;
+    box-shadow: 0 0 8px #eab308;
+}
+
+.theme-dot[data-color="purple"] {
+    background: #d946ef;
+    box-shadow: 0 0 8px #d946ef;
+}
+
+.theme-dot[data-color="orange"] {
+    background: #f97316;
+    box-shadow: 0 0 8px #f97316;
+}
+
+.hud-middle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    gap: 10px;
+}
+
+#message {
+    font-weight: bold;
+    font-size: 1.1em;
+    text-align: center;
+    flex-grow: 1;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Butonlara da hafif cam efekti verildi */
+button {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid var(--accent);
+    color: var(--text-color);
+    font-weight: bold;
+    border-radius: 12px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: var(--accent);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.hud-bottom {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.stat-badge {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--glass-border);
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+[data-theme="white"] .stat-badge {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Dinamik Oyun Alanı */
+#container {
+    display: grid;
+    width: 90vw;
+    max-width: 450px;
+    gap: 12px;
+    margin: 30px auto;
+}
+
+.square {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 16px;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.1s, box-shadow 0.3s, opacity 0.3s;
+}
+
+.square:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
+}
+
+.dim {
+    opacity: 0.1;
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.pop-effect {
+    animation: pop 0.3s ease-out;
+    z-index: 10;
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-10px);
+    }
+
+    50% {
+        transform: translateX(10px);
+    }
+
+    75% {
+        transform: translateX(-10px);
+    }
+}
+
+.shake-effect {
+    animation: shake 0.4s ease-in-out;
+}
