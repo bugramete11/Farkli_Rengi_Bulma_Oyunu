@@ -2,9 +2,7 @@
 :root {
     --bg-color: #09090b;
     --blob-1: #0ea5e9;
-    /* Arka plandaki 1. parlayan küre */
     --blob-2: #6366f1;
-    /* Arka plandaki 2. parlayan küre */
     --capsule-bg: rgba(20, 20, 25, 0.4);
     --glass-border: rgba(255, 255, 255, 0.1);
     --text-color: #f8fafc;
