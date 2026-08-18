@@ -1,20 +1,25 @@
-# RENK AVCISI '26
-[ Tema Seçici: Black | White | Red | Green | Blue | Yellow | Purple | Orange ]
+# 🎨 Renk Avcısı '26
 
-[ 🔄 YENİDEN ] [ Gözlerine Güveniyor musun? ] [ 💡 İPUCU (-2) ]
+Bu proje, web teknolojileri (HTML, CSS, JS) kullanılarak geliştirilmiş modern ve interaktif bir tarayıcı oyunudur[cite: 1, 2, 3]. Kullanıcının görsel algısını, reflekslerini ve renkleri ayırt etme yeteneğini test etmeyi amaçlar[cite: 1, 2, 3].
 
-Can: ❤️❤️❤️
-Skor: 0
-Rekor: 0
+## ✨ Özellikler
 
---------------------------------------------------
-[Kareler 2x2 grid yapısında belirir]
+* **Dinamik Zorluk Seviyesi:** Skorunuz arttıkça grid boyutu 2x2'den başlayarak 5x5'e kadar genişler ve renk farkı azalarak oyun zorlaşır[cite: 1, 2, 3].
+* **Glassmorphism Tasarım:** Arka plandaki parlayan küreler ve cam efektli (blur) modern HUD arayüzü ile şık bir görünüm sunar[cite: 1, 3].
+* **Gelişmiş Tema Yönetimi:** Siyah, beyaz, kırmızı, yeşil, mavi, sarı, mor ve turuncu olmak üzere farklı tema seçenekleri sunar; yapılan tema seçimi tarayıcıda kalıcı olarak saklanır[cite: 1, 2, 3].
+* **İpucu ve Ses Efektleri:** 2 veya daha fazla puanınız olduğunda ipucu alarak yanlış kutucukları geçici olarak karartabilir, doğru ve yanlış tıklamalarda ses efektleri ile geri bildirim alabilirsiniz[cite: 1, 2, 3].
+* **Kalıcı Rekor Sistemi:** En yüksek skorunuz `localStorage` kullanılarak tarayıcınıza kaydedilir[cite: 1, 2, 3].
 
-# Kullanıcı doğru kareye tıklar:
-"Tam İsabet!" -> Skor artar, zorluk seviyesi yükselir.
+## 🧠 Çalışma Mantığı
 
-# Kullanıcı yanlış kareye tıklar:
-"Dikkatli Ol!" -> Can azalır, ekranda sarsılma (shake) efekti oluşur.
+* **Tablo ve Renk Üretimi (`generateBoard`):** Skorunuza bağlı olarak (5, 10 ve 15 eşikleri) `gridTemplateColumns` dinamik olarak ayarlanır[cite: 2]. `Math.random` ile rastgele bir baz renk üretilir ve `difficulty` (zorluk/fark) değeri eklenerek farklı olan kutucuğun rengi belirlenir[cite: 2].
+* **Tıklama ve Etkileşimler (`handleSquareClick`):** Doğru kutucuğa tıklandığında `correctSound` çalınır, skor artırılır ve zorluk seviyesi (`difficulty -= 3`) artırılarak tahta yenilenir[cite: 2]. Yanlış tıklamalarda ise can (`lives`) azalır, konteyner üzerinde sarsılma (`shake-effect`) animasyonu tetiklenir[cite: 2].
+* **Tema Altyapısı:** Tema noktalarına (`theme-dot`) tıklandığında `document.body` üzerindeki `data-theme` niteliği güncellenir ve CSS değişkenleri (`:root`) aracılığıyla tüm arayüzün renk paleti anında değişir[cite: 2, 3].
 
-# Oyun Bittiğinde:
-"OYUN BİTTİ!" veya "YENİ REKOR: X 🎉"s
+## 🛠️ Kurulum ve Çalıştırma
+
+Projeyi yerel bilgisayarınızda çalıştırmak için şu adımları izleyebilirsiniz:
+
+1. Depoyu klonlayın veya dosyaları bilgisayarınıza indirin:
+   ```bash
+   git clone [https://github.com/kullanici-adiniz/renk-avcisi-26.git](https://github.com/kullanici-adiniz/renk-avcisi-26.git)
