@@ -22,4 +22,4 @@ Projeyi yerel bilgisayarınızda çalıştırmak için şu adımları izleyebili
 
 1. Depoyu klonlayın veya dosyaları bilgisayarınıza indirin:
    ```bash
-   git clone [https://github.com/kullanici-adiniz/renk-avcisi-26.git](https://github.com/kullanici-adiniz/renk-avcisi-26.git)
+   git clone https://github.com/bugramete11/Farkli_Rengi_Bulma_Oyunu/tree/main/RenkOyunu
