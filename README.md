@@ -1,1 +1,1 @@
-# Farkl-_Rengi_Bulma_Oyunu
+# Farkli-_Rengi_Bulma_Oyunu
