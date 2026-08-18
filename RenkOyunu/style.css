@@ -1,4 +1,4 @@
-/* --- YENİ NESİL TEMA & GLASSMORPHISM --- */
+
 :root {
     --bg-color: #09090b;
     --blob-1: #0ea5e9;
@@ -81,7 +81,6 @@
     --accent: #f97316;
 }
 
-/* --- GENEL TASARIM --- */
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
@@ -96,7 +95,7 @@ body {
     transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-/* ARKA PLAN KÜRELERİ - Camın arkasında harika bir derinlik yaratır */
+
 body::before,
 body::after {
     content: '';
@@ -123,20 +122,17 @@ body::after {
     background: var(--blob-2);
 }
 
-/* 2026 Yüzen Kapsül Arayüzü (TAM GLASSMORPHISM) */
+
 .hud-capsule {
     background: var(--capsule-bg);
     backdrop-filter: blur(25px);
-    /* Cam bulanıklığı */
     -webkit-backdrop-filter: blur(25px);
     border: 1px solid var(--glass-border);
-    /* Cam çerçevesi yansıması */
     border-radius: 24px;
     width: 90%;
     max-width: 600px;
     margin-top: 30px;
     padding: 20px 30px;
-    /* Camın iç ve dış gölgelendirmesi */
     box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3), inset 0 0 15px rgba(255, 255, 255, 0.05);
     transition: all 0.5s ease;
 }
@@ -163,7 +159,6 @@ h1 span {
     color: var(--accent);
 }
 
-/* Tema Renk Noktaları */
 .theme-picker {
     display: flex;
     gap: 8px;
@@ -238,7 +233,6 @@ h1 span {
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }
 
-/* Butonlara da hafif cam efekti verildi */
 button {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(5px);
@@ -278,7 +272,6 @@ button:hover {
     background: rgba(255, 255, 255, 0.3);
 }
 
-/* Dinamik Oyun Alanı */
 #container {
     display: grid;
     width: 90vw;
